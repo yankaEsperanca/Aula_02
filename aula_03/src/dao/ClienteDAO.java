@@ -19,6 +19,7 @@ public class ClienteDAO {
 			stm.setString(2, to.getNome());
 			stm.setString(3, to.getFone());
 			stm.execute();
+			//COLOCAR AQUI O METODO DO PROFESSOR
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

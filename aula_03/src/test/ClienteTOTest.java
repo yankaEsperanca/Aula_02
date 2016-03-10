@@ -11,7 +11,7 @@ public class ClienteTOTest {
 	ClienteTO to;
 	@Before
 	public void setUp() throws Exception {
-		to = new ClienteTO();
+		to = new ClienteTO(); // instancia o TO
 		to.setFone("123456789");
 		to.setNome("Bela Lugosi");
 		to.setId(3);

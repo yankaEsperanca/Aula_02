@@ -10,7 +10,8 @@ import org.junit.runners.MethodSorters;
 import to.ClienteTO;
 import dao.ClienteDAO;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING) //para poder executar em ordem, mas coloca o 01,02,03 e etc
+
 public class ClienteDAOTest {
 	ClienteDAO dao;
 	ClienteTO to;

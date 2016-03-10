@@ -17,8 +17,8 @@ public class ConnectionFactoryTest {
 	public void testObterConexao() {
 		try {
 			Connection conn = ConnectionFactory.obtemConexao();
-			assertNotNull("testa se a conexao nao e nula", conn);
-			assertTrue("Ã© um objeto conexao", conn instanceof Connection );
+			assertNotNull("testa se a conexao nao e nula", conn);//só verifica se pegou alguma conexão 
+			assertTrue("Ã© um objeto conexao", conn instanceof Connection ); // testa se o conn é uma instancia do connection
 		} catch (SQLException e) {
 			e.printStackTrace();
 			fail("gerou SQLException");
