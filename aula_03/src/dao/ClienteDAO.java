@@ -9,9 +9,10 @@ import to.ClienteTO;
 import factory.ConnectionFactory;
 
 public class ClienteDAO {
+	int idGerado;
 	
 	public void incluir(ClienteTO to) {
-		String sqlInsert = "INSERT INTO cliente(id, nome, fone) VALUES (?, ?, ?)";
+		String sqlInsert = "INSERT INTO cliente(id, nome, fone) VALUES (?,?, ?)";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
@@ -19,6 +20,15 @@ public class ClienteDAO {
 			stm.setString(2, to.getNome());
 			stm.setString(3, to.getFone());
 			stm.execute();
+			String sqlSelect = "select LAST_INSERT_ID()"; 
+			try(PreparedStatement pst1 = conn.prepareStatement(sqlSelect);
+					ResultSet rs = pst1.executeQuery();){
+				if(rs.next()){
+					idGerado = rs.getInt("1");
+					}    
+				} catch (SQLException e)  {
+					e.printStackTrace(); 
+					}			
 			//COLOCAR AQUI O METODO DO PROFESSOR
 		} catch (SQLException e) {
 			e.printStackTrace();
