@@ -8,6 +8,8 @@ public class Cliente {
 	private String nome;
 	private String fone;
 
+
+
 	public Cliente(int id, String nome, String fone) {
 		this.id = id;
 		this.nome = nome;
